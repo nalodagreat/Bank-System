@@ -19,4 +19,18 @@
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Person.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="BankClient.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="clsString.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Clients.txt" />
+  </ItemGroup>
 </Project>
