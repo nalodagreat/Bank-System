@@ -28,7 +28,7 @@ public:
 	{
 		this->email = email;
 	}
-	void setPhoneNumber(string email)
+	void setPhoneNumber(string phoneNumber)
 	{
 		this->phoneNumber = phoneNumber;
 	}
