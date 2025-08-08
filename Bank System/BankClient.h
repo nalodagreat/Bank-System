@@ -286,7 +286,12 @@ public:
 
 	}
 	
-
+	 void deposit(double balanceToDeposit)
+	{
+		
+		accountBalance += balanceToDeposit;
+		save();
+	}
 	
 };
 
