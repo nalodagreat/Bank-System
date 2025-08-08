@@ -1,3 +1,6 @@
+//  This file is part of my personal string library "input-validation-library"
+// Originally developed to simplify coding tasks.
+ //original repository: https://github.com/nalodagreat/input-validation-library
 #pragma once
 
 #include <iostream>
