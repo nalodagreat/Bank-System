@@ -7,7 +7,7 @@
 #include "AddNewClientScreen.h"
 using namespace std;
 
-class clsMainScreen :protected Screen
+class MainScreen :protected Screen
 {
 private:
     enum enMainMenueOptions
@@ -29,7 +29,7 @@ private:
         cout << setw(37) << left << "" << "\n\tPress any key to go back to Main Menue...\n";
 
         system("pause>0");
-        ShowMainMenue();
+        showMainMenue();
     }
 
     static void _ShowAllClientsScreen()
@@ -141,7 +141,7 @@ private:
 public:
 
 
-    static void ShowMainMenue()
+    static void showMainMenue()
     {
 
         system("cls");
