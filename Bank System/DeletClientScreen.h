@@ -5,7 +5,7 @@
 #include "BankClient.h"
 #include "InputValidate.h"
 
-class clsDeleteClientScreen :protected Screen
+class DeleteClientScreen :protected Screen
 {
 
 private:
