@@ -5,6 +5,8 @@
 #include <iomanip>
 #include "ClientListScreen.h"
 #include "AddNewClientScreen.h"
+#include "DeletClientScreen.h"
+#include "UpdateClientScreen.h"
 using namespace std;
 
 class MainScreen :protected Screen
@@ -47,14 +49,15 @@ private:
 
     static void _ShowDeleteClientScreen()
     {
-        cout << "\nDelete Client Screen Will be here...\n";
+        //cout << "\nDelete Client Screen Will be here...\n";
+        DeleteClientScreen::ShowDeleteClientScreen();
 
     }
 
     static void _ShowUpdateClientScreen()
     {
-        cout << "\nUpdate Client Screen Will be here...\n";
-
+        //cout << "\nUpdate Client Screen Will be here...\n";
+        UpdateClientScreen::updateClient();
     }
 
     static void _ShowFindClientScreen()
