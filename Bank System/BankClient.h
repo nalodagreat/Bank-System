@@ -292,6 +292,16 @@ public:
 		accountBalance += balanceToDeposit;
 		save();
 	}
+	 bool withDraw(int amount)
+	 {
+		 if(amount < accountBalance)
+		 {
+			 accountBalance -= amount;
+			 save();
+			 return true;
+		 }
+		 return false;
+	}
 	
 };
 
