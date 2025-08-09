@@ -39,39 +39,42 @@ private:
     static void _ShowAllClientsScreen()
     {
         ClientListScreen::ShowClientsList();
-
+        _GoBackToMainMenue();
 
     }
 
     static void _ShowAddNewClientsScreen()
     {
         AddNewClientScreen::addNewClient();
-
+        _GoBackToMainMenue();
     }
 
     static void _ShowDeleteClientScreen()
     {
         //cout << "\nDelete Client Screen Will be here...\n";
         DeleteClientScreen::ShowDeleteClientScreen();
-
+        _GoBackToMainMenue();
     }
 
     static void _ShowUpdateClientScreen()
     {
         //cout << "\nUpdate Client Screen Will be here...\n";
         UpdateClientScreen::updateClient();
+        _GoBackToMainMenue();
     }
 
     static void _ShowFindClientScreen()
     {
         //cout << "\nFind Client Screen Will be here...\n";
         FindClientScreen::ShowFindClientScreen();
+        _GoBackToMainMenue();
     }
 
     static void _ShowTransactionsMenue()
     {
         //cout << "\nTransactions Menue Will be here...\n";
         TransactionScreen::showTransactionsMenue();
+        _GoBackToMainMenue();
     }
 
     static void _ShowManageUsersMenue()
