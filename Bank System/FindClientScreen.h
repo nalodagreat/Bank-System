@@ -5,7 +5,7 @@
 #include "BankClient.h"
 #include "InputValidate.h"
 
-class clsFindClientScreen :protected Screen
+class FindClientScreen :protected Screen
 {
 
 private:
