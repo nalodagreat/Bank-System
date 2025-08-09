@@ -302,6 +302,18 @@ public:
 		 }
 		 return false;
 	}
-	
+	 
+	 
+	 static double  getClientsBalnces()
+	 {
+		 vector <BankClient> vClients = BankClient::getClientsList();
+		 double totalBalances = 0;
+		 for(BankClient c : vClients)
+		 {
+			 totalBalances+= c.accountBalance;
+		 }
+		 return totalBalances;
+
+	 }
 };
 
