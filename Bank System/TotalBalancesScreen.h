@@ -5,7 +5,7 @@
 #include <iomanip>
 
 
-class clsTotalBalancesScreen : protected Screen
+class TotalBalancesScreen : protected Screen
 {
 
 private:

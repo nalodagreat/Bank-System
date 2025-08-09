@@ -1,7 +1,9 @@
 #pragma once
-#pragma once
-#include "BankClient.h"
-#include "ClientListScreen.h"
+
+#include"DepositScreen.h"
+#include"WithdrawScreen.h"
+#include"TotalBalancesScreen.h"
+
 using namespace std;
 class TransactionScreen : protected Screen
 {
@@ -21,17 +23,20 @@ private:
 
     static void showDepositScreen()
     {
-        cout << "\n Deposit Screen will be here.\n";
+        //cout << "\n Deposit Screen will be here.\n";
+        depositScreen::showDepositScreen();
     }
 
     static void showWithdrawScreen()
     {
-        cout << "\n Withdraw Screen will be here.\n";
+        //cout << "\n Withdraw Screen will be here.\n";
+        WithdrawScreen::showTheWithDrawScreen();
     }
 
     static void showTotalBalancesScreen()
     {
-        cout << "\n Balances Screen will be here.\n";
+       // cout << "\n Balances Screen will be here.\n";
+        TotalBalancesScreen::ShowTotalBalances();
     }
 
     static void goBackToTransactionsMenue()

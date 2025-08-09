@@ -32,9 +32,6 @@
     <ClInclude Include="InputValidate.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="MainScreen.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
     <ClInclude Include="Screen.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
@@ -54,6 +51,18 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="TransactionScreen.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="DepositScreen.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="WithdrawScreen.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="TotalBalancesScreen.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScreen.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

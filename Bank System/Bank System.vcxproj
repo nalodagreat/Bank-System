@@ -131,13 +131,16 @@
     <ClInclude Include="ClientListScreen.h" />
     <ClInclude Include="clsString.h" />
     <ClInclude Include="DeletClientScreen.h" />
+    <ClInclude Include="DepositScreen.h" />
     <ClInclude Include="FindClientScreen.h" />
     <ClInclude Include="InputValidate.h" />
     <ClInclude Include="MainScreen.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Screen.h" />
+    <ClInclude Include="TotalBalancesScreen.h" />
     <ClInclude Include="TransactionScreen.h" />
     <ClInclude Include="UpdateClientScreen.h" />
+    <ClInclude Include="WithdrawScreen.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />

@@ -8,6 +8,7 @@
 #include "DeletClientScreen.h"
 #include "UpdateClientScreen.h"
 #include "FindClientScreen.h"
+#include "TransactionScreen.h"
 using namespace std;
 
 class MainScreen :protected Screen
@@ -69,8 +70,8 @@ private:
 
     static void _ShowTransactionsMenue()
     {
-        cout << "\nTransactions Menue Will be here...\n";
-
+        //cout << "\nTransactions Menue Will be here...\n";
+        TransactionScreen::showTransactionsMenue();
     }
 
     static void _ShowManageUsersMenue()
