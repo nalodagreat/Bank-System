@@ -8,7 +8,7 @@
 
 class UpdateClientScreen :protected Screen
 {
-    void readClientInfo(BankClient client)
+    static void readClientInfo(BankClient &client)
     {
         cout << "please enter the New Name of the client\n";
        client.setFirstName(InputValidate::readString());
@@ -38,7 +38,7 @@ public:
         BankClient client = BankClient::find(id);
         client.print();
         cout << endl << "update client Info\n";
-        /* readClientInfo(client);*/
+         readClientInfo(client);
         BankClient::enSave saveMode = client.save();
         if (saveMode == BankClient::enSave::savedSucssefully)
         {
