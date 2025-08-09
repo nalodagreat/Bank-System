@@ -24,7 +24,7 @@ class UpdateClientScreen :protected Screen
        client.setAccountBalance(InputValidate::readFloatNumber());
     }
 public:
-    void updateClient()
+    static void updateClient()
     {
         drawScreenHeader("update Client Screen\n");
         string id = "";
