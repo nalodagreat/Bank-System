@@ -2,6 +2,11 @@
 #include <iostream>
 #include "Screen.h"
 #include "InputValidate.h"
+#include "ListUsersScreen.h"
+#include "AddNewUserScreen.h"
+#include "DeleteUsersScreen.h"
+#include "UpdateUserScreen.h"
+#include "FindUserScreen.h"
 #include <iomanip>
 
 using namespace std;
@@ -31,27 +36,32 @@ private:
 
     static void showListUsersScreen()
     {
-        cout << "\nList Users Screen Will Be Here.\n";
+        //cout << "\nList Users Screen Will Be Here.\n";
+		ListUsersScreen::showUsersList();
     }
 
     static void showAddNewUserScreen()
     {
-        cout << "\nAdd New User Screen Will Be Here.\n";
+        //cout << "\nAdd New User Screen Will Be Here.\n";
+		AddNewUserScreen::showAddNewUserScreen();
     }
 
     static void showDeleteUserScreen()
     {
-        cout << "\nDelete User Screen Will Be Here.\n";
+        //cout << "\nDelete User Screen Will Be Here.\n";
+		DeleteUsersScreen::showDeleteUserScreen();
     }
 
     static void showUpdateUserScreen()
     {
-        cout << "\nUpdate User Screen Will Be Here.\n";
+        //cout << "\nUpdate User Screen Will Be Here.\n";
+		UpdateUserScreen::showUpdateUserScreen();
     }
 
     static void showFindUserScreen()
     {
-        cout << "\nFind User Screen Will Be Here.\n";
+        //cout << "\nFind User Screen Will Be Here.\n";
+		FindUserScreen::showFindUserScreen();
     }
 
     static void performManageUsersMenuOption(enManageUsersMenuOptions manageUsersMenuOption)

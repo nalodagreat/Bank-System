@@ -14,9 +14,8 @@ private:
     static void printUserRecordLine(User user)
     {
         cout << setw(8) << left << "" << "| " << setw(12) << left << user.getUserName();
-        cout << "| " << setw(25) << left << user.fullName();
-        cout << "| " << setw(12) << left << user.Phone;
-        cout << "| " << setw(20) << left << user.Email;
+        cout << "| " << setw(12) << left << user.getPhoneNumber();
+        cout << "| " << setw(20) << left << user.getEmail();
         cout << "| " << setw(10) << left << user.getPassword();
         cout << "| " << setw(12) << left << user.getPermissions();
     }

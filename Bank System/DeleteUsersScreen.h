@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class DeleteUserScreen : protected Screen
+class DeleteUsersScreen : protected Screen
 {
 private:
     static void printUser(User user)

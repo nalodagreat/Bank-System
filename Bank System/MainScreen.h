@@ -9,6 +9,7 @@
 #include "UpdateClientScreen.h"
 #include "FindClientScreen.h"
 #include "TransactionScreen.h"
+#include "ManageUsersScreen.h"
 using namespace std;
 
 class MainScreen :protected Screen
@@ -79,8 +80,8 @@ private:
 
     static void _ShowManageUsersMenue()
     {
-        cout << "\nUsers Menue Will be here...\n";
-
+       // cout << "\nUsers Menue Will be here...\n";
+		ManageUsersScreen::showManageUsersMenu();
     }
 
     static void _ShowEndScreen()
