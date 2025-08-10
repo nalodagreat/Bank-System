@@ -10,6 +10,7 @@
 #include "FindClientScreen.h"
 #include "TransactionScreen.h"
 #include "ManageUsersScreen.h"
+#include "Global.h"
 using namespace std;
 
 class MainScreen :protected Screen
@@ -84,9 +85,15 @@ private:
 		ManageUsersScreen::showManageUsersMenu();
     }
 
-    static void _ShowEndScreen()
+   /* static void _ShowEndScreen()
     {
         cout << "\nEnd Screen Will be here...\n";
+
+    }*/
+    static void _Logout()
+    {
+		CurrentUser = User::find("", "");
+		//after logout stack will finish and back to main function
 
     }
 
@@ -137,7 +144,7 @@ private:
 
         case enMainMenueOptions::eExit:
             system("cls");
-            _ShowEndScreen();
+            _Logout();
             //Login();
 
             break;
