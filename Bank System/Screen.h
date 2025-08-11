@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include "User.h"
+#include "Global.h"
 
 
 using namespace std;
@@ -17,7 +19,20 @@ protected:
         }
         cout << "\n\t\t\t\t\t______________________________________\n\n";
     }
-
+    bool isAccessAllowed(User::enPermissions permession)
+    {
+        if (CurrentUser.checkAccessPermession(permession))
+        {
+            return true;
+        }
+        else
+        {
+            cout << "\t\t\t\t\t______________________________________\n\n"<<
+             "\t\t\t\t\t Access Denied!Contact Your Admin :)";
+            cout << "\n\t\t\t\t\t______________________________________\n\n";
+            return false;
+        }
+    }
 
 };
 
