@@ -26,6 +26,8 @@ class UpdateClientScreen :protected Screen
 public:
     static void updateClient()
     {
+        if (!Screen::isAccessAllowed(User::enPermissions::pUpdateClients))
+            return;
         drawScreenHeader("update Client Screen\n");
         string id = "";
         cout << "please enter the id of the client\n";

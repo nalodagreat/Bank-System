@@ -19,7 +19,7 @@ protected:
         }
         cout << "\n\t\t\t\t\t______________________________________\n\n";
     }
-    bool isAccessAllowed(User::enPermissions permession)
+    static bool isAccessAllowed(User::enPermissions permession)
     {
         if (CurrentUser.checkAccessPermession(permession))
         {

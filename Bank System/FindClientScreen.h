@@ -28,6 +28,8 @@ public:
 
     static void ShowFindClientScreen()
     {
+        if (!Screen::isAccessAllowed(User::enPermissions::pFindClient))
+            return;
 
         drawScreenHeader("\tFind Client Screen");
 

@@ -23,6 +23,8 @@ class AddNewClientScreen : protected Screen
 public:
     static void addNewClient()
     {
+        if (!Screen::isAccessAllowed(User::enPermissions::pFindClient))
+            return;
         drawScreenHeader("add new client Screen");
         string id;
         cout << "plese enter the id of the new client: \n";

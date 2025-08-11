@@ -23,6 +23,9 @@ private:
 public:
     static void showUsersList()
     {
+        if (!Screen::isAccessAllowed(User::enPermissions::pListClients))
+            return;
+
         vector<User> users = User::getUsersList();
 
         string title = "\t  User List Screen";
