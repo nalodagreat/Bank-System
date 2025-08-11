@@ -92,6 +92,9 @@
     <ClInclude Include="LoginScreen.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />

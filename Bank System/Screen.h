@@ -2,6 +2,7 @@
 #include <iostream>
 #include "User.h"
 #include "Global.h"
+#include "Date.h"
 
 
 using namespace std;
@@ -18,6 +19,10 @@ protected:
             cout << "\n\t\t\t\t\t  " << subTitle;
         }
         cout << "\n\t\t\t\t\t______________________________________\n\n";
+        cout << "\t\t\t\t\t User: "<< CurrentUser.getUserName() << endl;
+       
+        cout << "\t\t\t\t\t Date: " << Date::getSystemDate().day<<"/"<<Date::getSystemDate().month<<"/"<< Date::getSystemDate().year << endl;
+
     }
     static bool isAccessAllowed(User::enPermissions permession)
     {
