@@ -278,4 +278,12 @@ public:
     {
         return loadUsersDataFromFile();
     }
+    bool checkAccessPermession(enPermissions permission)
+    {
+        if (permission == eAll)
+            return true;
+        return ((permission & this->permissions) == permission);
+        //short hand if
+        // return (permission == eAll) ? true : ((permission & this->permissions) == permission)? true:false
+    }
 };
