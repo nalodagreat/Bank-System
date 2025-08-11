@@ -1,11 +1,15 @@
-#include "MainScreen.h"
+#include "LoginScreen.h"
 
 
 
 
 int main()
 {
-   
-    MainScreen::showMainMenue();
+	while (true)
+	{
+		LoginScreen::showLoginScreen();
+    }
+	
+	
     return 0;
 }

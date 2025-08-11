@@ -35,7 +35,6 @@ private:
             loginFailed = CurrentUser.isEmpty();
 
         } while (loginFailed);
-
         MainScreen::showMainMenue();
     }
 
