@@ -134,7 +134,7 @@ private:
               string line="";
               line+=userLog.userName+seperator;
               line+= userLog.password+seperator;
-              line+= to_string(userLog.dateOfLogIn.day) + "/" + to_string(userLog.dateOfLogIn.month) + "/" + to_string(userLog.dateOfLogIn.month) + "/"+seperator;
+              line+= to_string(userLog.dateOfLogIn.day) + "/" + to_string(userLog.dateOfLogIn.month) + "/" + to_string(userLog.dateOfLogIn.year) + "/"+seperator;
               line+= userLog.timeOfLogIn+seperator;
 			  line += to_string(userLog.permissions);
               return line;
@@ -340,13 +340,11 @@ public:
             {
                 vector<string> vData = clsString::Split(line, "#//#");
                 stUserLog userLog;
-                userLog.timeOfLogIn = vData[0];
-                userLog.dateOfLogIn.day = stoi(vData[1]);
-                userLog.dateOfLogIn.month = stoi(vData[2]);
-                userLog.dateOfLogIn.year = stoi(vData[3]);
-                userLog.userName = vData[4];
-                userLog.password = vData[5];
-                userLog.permissions = stoi(vData[6]);
+                userLog.userName = vData[0];
+                userLog.password = vData[1];
+				userLog.dateOfLogIn =Date::convertStringToDateOfLoginstruct(vData[2]);
+				userLog.timeOfLogIn = vData[3];
+                userLog.permissions = stoi(vData[4]);
                 vUserLog.push_back(userLog);
             }
             myFile.close();

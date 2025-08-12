@@ -151,6 +151,7 @@ private:
 		case enMainMenueOptions::eLoginRegister:
 			system("cls");
 			_ShowLoginRegister();
+            _GoBackToMainMenue();
 
         case enMainMenueOptions::eExit:
             system("cls");

@@ -13,7 +13,7 @@ class LoginRegisterScreen : protected Screen
 private:
     static void printstUserLogLine(User::stUserLog stUserLog)
     {
-        cout << setw(8) << left << "" << "| " << setw(35) << left << to_string(stUserLog.dateOfLogIn.month) + "/" + to_string(stUserLog.dateOfLogIn.month) << " ; " << stUserLog.timeOfLogIn;
+        cout << setw(8) << left << "" << "| " << setw(35) << left << to_string(stUserLog.dateOfLogIn.day) + "/" + to_string(stUserLog.dateOfLogIn.month) + "/" + to_string(stUserLog.dateOfLogIn.year) << " ; " << stUserLog.timeOfLogIn;
         cout << "| " << setw(20) << left << stUserLog.userName;
         cout << "| " << setw(20) << left << stUserLog.password;
         cout << "| " << setw(10) << left << stUserLog.permissions;

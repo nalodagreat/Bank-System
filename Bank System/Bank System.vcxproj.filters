@@ -102,5 +102,6 @@
   <ItemGroup>
     <Text Include="Clients.txt" />
     <Text Include="Users.txt" />
+    <Text Include="UserLogHistory.txt" />
   </ItemGroup>
 </Project>

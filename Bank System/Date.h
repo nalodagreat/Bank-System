@@ -198,6 +198,25 @@ public:
 		seconds = now.tm_sec;
 		return to_string(hours) + ":" + to_string(minutes) + ":" +to_string(seconds);
 	}
-
+	static string convertDateOfLoginstructToString(systemDate date, string seperator = "/")
+	{
+		string line = "";
+		line += to_string(date.day) + seperator;
+		line += to_string(date.month) + seperator;
+		line += to_string(date.year);
+		return line;
+	}
+	static systemDate convertStringToDateOfLoginstruct(string line, string seperator = "/")
+	{
+		systemDate date;
+		vector<string> vData = clsString::Split(line, seperator);
+		if (vData.size() == 3)
+		{
+			date.day = stoi(vData[0]);
+			date.month = stoi(vData[1]);
+			date.year = stoi(vData[2]);
+		}
+		return date;
+	}
 };
 
