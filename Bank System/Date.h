@@ -186,7 +186,18 @@ public:
 	{
 		return day == numberOfDaysInAMonth(month, year);
 	}
-
+	static string getSystemTime()
+	{
+		//getthetime in format: hour::minutes::seconds
+		short hours,minutes,seconds;
+		time_t t = time(0);
+		tm now = {};
+		localtime_s(&now, &t);
+		hours= now.tm_hour;
+		minutes = now.tm_min;
+		seconds = now.tm_sec;
+		return to_string(hours) + ":" + to_string(minutes) + ":" +to_string(seconds);
+	}
 
 };
 

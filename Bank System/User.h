@@ -5,7 +5,7 @@
 #include <fstream>
 #include "Person.h"
 #include "clsString.h"
-
+#include "LoginScreen.h"
 using namespace std;
 
 class User : public Person
@@ -118,6 +118,34 @@ private:
     {
         return User(enMode::emptyMode, "", "", "", "", "", "", 0);
     }
+    public:
+        struct stUserLog
+        {
+            string userName = this->userName;
+            string password = this->password;
+            Date::systemDate dateOfLogIn = Date::getSystemDate();
+            string timeOfLogIn = Date::getSystemTime();
+        };
+        private:
+         string convertLogstructToLine(stUserLog userLog, string seperator = "#//#")
+        {
+              string line="";
+              line+=userLog.userName+seperator;
+              line+= userLog.password+seperator;
+              line+= to_string(userLog.dateOfLogIn.day) + "/" + to_string(userLog.dateOfLogIn.month) + "/" + to_string(userLog.dateOfLogIn.month) + "/"+seperator;
+              line+= userLog.timeOfLogIn;
+              return line;
+        }
+         void writeLogHistoryOnfile(string dataLine)
+        {
+            fstream myFile;
+            myFile.open("UserLogHistory.txt", ios::out | ios::app);
+            if (myFile.is_open())
+            {
+                myFile << dataLine << endl;
+                myFile.close();
+            }
+		}
 
 public:
     enum enPermissions { eAll = -1, pListClients = 1, pAddNewClient = 2, pDeleteClient = 4, pUpdateClients = 8, pFindClient = 16, pTranactions = 32, pManageUsers = 64 };
@@ -285,5 +313,12 @@ public:
         return ((permission & this->permissions) == permission);
         //short hand if
         // return (permission == eAll) ? true : ((permission & this->permissions) == permission)? true:false
+    }
+   
+    void logFileHistory()
+    {
+        // when session start
+		stUserLog userLog;
+        writeLogHistoryOnfile(convertLogstructToLine(userLog));
     }
 };
