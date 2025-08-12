@@ -6,6 +6,7 @@
 #include "Person.h"
 #include "clsString.h"
 #include "LoginScreen.h"
+#include "Date.h"
 using namespace std;
 
 class User : public Person
@@ -315,7 +316,7 @@ public:
         // return (permission == eAll) ? true : ((permission & this->permissions) == permission)? true:false
     }
    
-    void logFileHistory()
+    void logFileDetails()
     {
         // when session start
 		stUserLog userLog;
