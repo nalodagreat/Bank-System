@@ -326,7 +326,31 @@ public:
         userLog.dateOfLogIn = Date::getSystemDate();
         userLog.permissions = this->permissions;
         userLog.timeOfLogIn = Date::getSystemTime();
-
         writeLogHistoryOnfile(convertLogstructToLine(userLog));
+    }
+    vector <stUserLog> static getLoginRegisterList()
+    {
+        vector<stUserLog> vUserLog;
+        fstream myFile;
+        myFile.open("UserLogHistory.txt", ios::in);
+        if (myFile.is_open())
+        {
+            string line;
+            while (getline(myFile, line))
+            {
+                vector<string> vData = clsString::Split(line, "#//#");
+                stUserLog userLog;
+                userLog.timeOfLogIn = vData[0];
+                userLog.dateOfLogIn.day = stoi(vData[1]);
+                userLog.dateOfLogIn.month = stoi(vData[2]);
+                userLog.dateOfLogIn.year = stoi(vData[3]);
+                userLog.userName = vData[4];
+                userLog.password = vData[5];
+                userLog.permissions = stoi(vData[6]);
+                vUserLog.push_back(userLog);
+            }
+            myFile.close();
+        }
+        return vUserLog;
     }
 };
