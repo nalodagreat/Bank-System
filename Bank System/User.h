@@ -151,15 +151,15 @@ private:
 		}
 
 public:
-    enum enPermissions { eAll = -1, pListClients = 1, pAddNewClient = 2, pDeleteClient = 4, pUpdateClients = 8, pFindClient = 16, pTranactions = 32, pManageUsers = 64 };
+    enum enPermissions { eAll = -1, pListClients = 1, pAddNewClient = 2, pDeleteClient = 4, pUpdateClients = 8, pFindClient = 16, pTranactions = 32, pManageUsers = 64,pShowLoginRegister=128};
     User(enMode mode, string firstName, string lastName,
         string email, string phone, string userName, string password,
         int permissions) : Person(firstName, lastName, email, phone)
     {
-        mode = mode;
-        userName = userName;
-        password = password;
-        permissions = permissions;
+        this->mode = mode;
+        this->userName = userName;
+        this->password = password;
+        this->permissions = permissions;
     }
 
     bool isEmpty()
