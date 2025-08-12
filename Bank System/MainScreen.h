@@ -11,6 +11,7 @@
 #include "TransactionScreen.h"
 #include "ManageUsersScreen.h"
 #include "Global.h"
+#include "LoginRegisterSceen.h"
 using namespace std;
 
 class MainScreen :protected Screen
@@ -25,8 +26,8 @@ private:
 
     static short _ReadMainMenueOption()
     {
-        cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 8]? ";
-        short Choice = InputValidate::readShortNumberBetween(1, 8, "Enter Number between 1 to 8? ");
+        cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 9]? ";
+        short Choice = InputValidate::readShortNumberBetween(1, 9, "Enter Number between 1 to 9? ");
         return Choice;
     }
 
@@ -96,6 +97,12 @@ private:
 		//after logout stack will finish and back to main function
 
     }
+    static void _ShowLoginRegister()
+    {
+        //cout << "\nLogin Register Screen Will be here...\n";
+		LoginRegisterScreen::showLoginRegisterScreen();
+
+    }
 
     static void _PerfromMainMenueOption(enMainMenueOptions mainMenueOption)
     {
@@ -141,6 +148,9 @@ private:
             system("cls");
             _ShowManageUsersMenue();
             break;
+		case enMainMenueOptions::eLoginRegister:
+			system("cls");
+			_ShowLoginRegister();
 
         case enMainMenueOptions::eExit:
             system("cls");
