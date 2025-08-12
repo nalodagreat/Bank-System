@@ -122,10 +122,11 @@ private:
     public:
         struct stUserLog
         {
-            string userName = this->userName;
-            string password = this->password;
-            Date::systemDate dateOfLogIn = Date::getSystemDate();
-            string timeOfLogIn = Date::getSystemTime();
+            string userName;
+            string password;
+            Date::systemDate dateOfLogIn;
+			int permissions;
+            string timeOfLogIn;
         };
         private:
          string convertLogstructToLine(stUserLog userLog, string seperator = "#//#")
@@ -134,7 +135,8 @@ private:
               line+=userLog.userName+seperator;
               line+= userLog.password+seperator;
               line+= to_string(userLog.dateOfLogIn.day) + "/" + to_string(userLog.dateOfLogIn.month) + "/" + to_string(userLog.dateOfLogIn.month) + "/"+seperator;
-              line+= userLog.timeOfLogIn;
+              line+= userLog.timeOfLogIn+seperator;
+			  line += to_string(userLog.permissions);
               return line;
         }
          void writeLogHistoryOnfile(string dataLine)
@@ -318,8 +320,13 @@ public:
    
     void logFileDetails()
     {
-        // when session start
-		stUserLog userLog;
+        stUserLog userLog;
+        userLog.userName = this->userName;
+        userLog.password = this->password;
+        userLog.dateOfLogIn = Date::getSystemDate();
+        userLog.permissions = this->permissions;
+        userLog.timeOfLogIn = Date::getSystemTime();
+
         writeLogHistoryOnfile(convertLogstructToLine(userLog));
     }
 };
