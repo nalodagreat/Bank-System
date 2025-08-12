@@ -140,6 +140,7 @@
     <ClInclude Include="Global.h" />
     <ClInclude Include="InputValidate.h" />
     <ClInclude Include="ListUsersScreen.h" />
+    <ClInclude Include="LoginRegisterSceen.h" />
     <ClInclude Include="LoginScreen.h" />
     <ClInclude Include="MainScreen.h" />
     <ClInclude Include="ManageUsersScreen.h" />

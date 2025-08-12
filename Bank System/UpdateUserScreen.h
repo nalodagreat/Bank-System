@@ -93,6 +93,10 @@ private:
         cin >> answer;
         if (answer == 'y' || answer == 'Y')
             permissions += User::enPermissions::pManageUsers;
+        cout << "\nshow loginRegister? y/n? ";
+        cin >> answer;
+        if (answer == 'y' || answer == 'Y')
+            permissions += User::enPermissions::pShowLoginRegister;
 
         return permissions;
     }

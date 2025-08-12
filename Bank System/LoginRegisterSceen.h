@@ -22,6 +22,8 @@ private:
 public:
     static void showLoginRegisterScreen()
     {
+        if (!Screen::isAccessAllowed(User::enPermissions::pShowLoginRegister))
+			return;
         vector <User::stUserLog> vstUserLog = User::getLoginRegisterList();
 
         string title = "\tLogin Register List Screen";

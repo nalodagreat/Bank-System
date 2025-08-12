@@ -13,11 +13,15 @@ class ListUsersScreen : protected Screen
 private:
     static void printUserRecordLine(User user)
     {
-        cout << setw(8) << left << "" << "| " << setw(12) << left << user.getUserName();
-        cout << "| " << setw(12) << left << user.getPhoneNumber();
-        cout << "| " << setw(20) << left << user.getEmail();
-        cout << "| " << setw(10) << left << user.getPassword();
-        cout << "| " << setw(12) << left << user.getPermissions();
+        cout << setw(8)  << left << "" << "| "
+             << setw(12) << left << user.getUserName()
+             << "| " << setw(12) << left << user.getFirstName()
+             << "| " << setw(12) << left << user.getLastName()
+             << "| " << setw(12) << left << user.getPhoneNumber()
+             << "| " << setw(20) << left << user.getEmail()
+             << "| " << setw(10) << left << user.getPassword()
+             << "| " << setw(12) << left << user.getPermissions()
+             << endl;
     }
 
 public:
@@ -33,17 +37,21 @@ public:
 
         drawScreenHeader(title, subTitle);
 
-        cout << setw(8) << left << "" << "\n\t_______________________________________________________";
-        cout << "______________________________________________\n" << endl;
+        cout << setw(8)  << left << "" << "\n\t";
+        cout << "___________________________________________________________________________________________________________\n" << endl;
 
-        cout << setw(8) << left << "" << "| " << left << setw(12) << "UserName";
-        cout << "| " << left << setw(25) << "Full Name";
-        cout << "| " << left << setw(12) << "Phone";
-        cout << "| " << left << setw(20) << "Email";
-        cout << "| " << left << setw(10) << "Password";
-        cout << "| " << left << setw(12) << "Permissions";
-        cout << setw(8) << left << "" << "\n\t_______________________________________________________";
-        cout << "______________________________________________\n" << endl;
+        cout << setw(8)  << left << "" << "| "
+             << setw(12) << left << "UserName"
+             << "| " << setw(12) << left << "First Name"
+             << "| " << setw(12) << left << "Last Name"
+             << "| " << setw(12) << left << "Phone"
+             << "| " << setw(20) << left << "Email"
+             << "| " << setw(10) << left << "Password"
+             << "| " << setw(12) << left << "Permissions"
+             << endl;
+
+        cout << setw(8)  << left << "" << "\n\t";
+        cout << "___________________________________________________________________________________________________________\n" << endl;
 
         if (users.empty())
             cout << "\t\t\t\tNo Users Available In the System!";
@@ -51,10 +59,9 @@ public:
             for (User& user : users)
             {
                 printUserRecordLine(user);
-                cout << endl;
             }
 
-        cout << setw(8) << left << "" << "\n\t_______________________________________________________";
-        cout << "______________________________________________\n" << endl;
+        cout << setw(8)  << left << "" << "\n\t";
+        cout << "___________________________________________________________________________________________________________\n" << endl;
     }
 };
