@@ -42,48 +42,49 @@ private:
     static void _ShowAllClientsScreen()
     {
         ClientListScreen::ShowClientsList();
-        
+        _GoBackToMainMenue();
 
     }
 
     static void _ShowAddNewClientsScreen()
     {
         AddNewClientScreen::addNewClient();
-      
+        _GoBackToMainMenue();
     }
 
     static void _ShowDeleteClientScreen()
     {
         //cout << "\nDelete Client Screen Will be here...\n";
         DeleteClientScreen::ShowDeleteClientScreen();
-       
+        _GoBackToMainMenue();
     }
 
     static void _ShowUpdateClientScreen()
     {
         //cout << "\nUpdate Client Screen Will be here...\n";
         UpdateClientScreen::updateClient();
-       
+        _GoBackToMainMenue();
     }
 
     static void _ShowFindClientScreen()
     {
         //cout << "\nFind Client Screen Will be here...\n";
         FindClientScreen::ShowFindClientScreen();
-       
+        _GoBackToMainMenue();
     }
 
     static void _ShowTransactionsMenue()
     {
         //cout << "\nTransactions Menue Will be here...\n";
         TransactionScreen::showTransactionsMenue();
-       
+        _GoBackToMainMenue();
     }
 
     static void _ShowManageUsersMenue()
     {
        // cout << "\nUsers Menue Will be here...\n";
 		ManageUsersScreen::showManageUsersMenu();
+        _GoBackToMainMenue();
     }
 
    /* static void _ShowEndScreen()
@@ -101,7 +102,7 @@ private:
     {
         //cout << "\nLogin Register Screen Will be here...\n";
 		LoginRegisterScreen::showLoginRegisterScreen();
-
+        _GoBackToMainMenue();
     }
 
     static void _PerfromMainMenueOption(enMainMenueOptions mainMenueOption)
@@ -142,18 +143,16 @@ private:
         case enMainMenueOptions::eShowTransactionsMenue:
             system("cls");
             _ShowTransactionsMenue();
-            _GoBackToMainMenue();
             break;
 
         case enMainMenueOptions::eManageUsers:
             system("cls");
             _ShowManageUsersMenue();
-            _GoBackToMainMenue();
             break;
 		case enMainMenueOptions::eLoginRegister:
 			system("cls");
 			_ShowLoginRegister();
-            _GoBackToMainMenue();
+          
 
         case enMainMenueOptions::eExit:
             system("cls");
