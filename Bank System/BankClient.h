@@ -348,6 +348,41 @@ public:
 		 string userNmae = CurrentUser.getUserName();
 		 writeLogHistoryOnfile(dateAndTime + "#//#" + idClientFrom + "#//#" + idClienTo + "#//#" + to_string(amountToTransfer) + "#//#" + to_string(newBalanceClientFrom) + "#//#" + to_string(newBalanceAmountTo) + "#//#" + userNmae);
 	 }
+	   struct stTransferInfo
+	   {
+		   string dateAndTime;
+		   string idClientFrom;
+		   string IdClientTo;
+		   double amountTransfered;
+		   double BalanceOfClientTranferdFrom;
+		   double BalanceOfClientTranferdTo;
+		   string usernameOfAdminWhoMadeOp;
+	   };
+	   vector <stTransferInfo> static getTransferList()
+	   {
+		   vector<stTransferInfo> vTransfers;
+		   fstream myFile;
+		   myFile.open("TransferHistory.txt", ios::in);
+		   if (myFile.is_open())
+		   {
+			   string line;
+			   while (getline(myFile, line))
+			   {
+				   vector<string> vData = clsString::Split(line, "#//#");
+				   stTransferInfo transfer;
+				   transfer.dateAndTime= vData[0];
+				   transfer.idClientFrom = vData[1];
+				   transfer.IdClientTo = vData[2];
+				   transfer.amountTransfered = stod(vData[3]);
+				   transfer.BalanceOfClientTranferdFrom = stod(vData[4]);
+				   transfer.BalanceOfClientTranferdTo = stod(vData[5]);
+				   transfer.usernameOfAdminWhoMadeOp = vData[6];
+				   vTransfers.push_back(transfer);
+			   }
+			   myFile.close();
+		   }
+		   return vTransfers;
+	   }
 
 };
 
