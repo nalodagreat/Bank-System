@@ -3,7 +3,7 @@
 #include"DepositScreen.h"
 #include"WithdrawScreen.h"
 #include"TotalBalancesScreen.h"
-
+#include "TransferScreen.h"
 using namespace std;
 class TransactionScreen : protected Screen
 {
@@ -40,8 +40,8 @@ private:
     }
     static void showTransferScreen()
     {
-         cout << "\n Transfere Screen will be here.\n";
-        
+         //cout << "\n Transfere Screen will be here.\n";
+        TransferScreen::showTransferScreen();
     }
 
     static void goBackToTransactionsMenue()

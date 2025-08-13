@@ -98,6 +98,9 @@
     <ClInclude Include="LoginRegisterSceen.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="TransferScreen.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />
