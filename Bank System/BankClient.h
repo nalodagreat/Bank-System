@@ -315,5 +315,15 @@ public:
 		 return totalBalances;
 
 	 }
+	 bool transfer(BankClient &clinetToTransferTo, double amountToTtransfer)
+	 {
+		 if(accountBalance> amountToTtransfer)
+		 {
+			 this->withDraw(amountToTtransfer);
+			 clinetToTransferTo.deposit(amountToTtransfer);
+			 return true;
+		 }
+		 return false;
+	 }
 };
 
