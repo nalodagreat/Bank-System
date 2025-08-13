@@ -101,10 +101,14 @@
     <ClInclude Include="TransferScreen.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="TransferLogScreen.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />
     <Text Include="Users.txt" />
     <Text Include="UserLogHistory.txt" />
+    <Text Include="TransferHistory.txt" />
   </ItemGroup>
 </Project>

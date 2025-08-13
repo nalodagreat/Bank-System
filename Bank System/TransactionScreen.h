@@ -4,6 +4,7 @@
 #include"WithdrawScreen.h"
 #include"TotalBalancesScreen.h"
 #include "TransferScreen.h"
+#include "TransferLogScreen.h"
 using namespace std;
 class TransactionScreen : protected Screen
 {
@@ -37,6 +38,7 @@ private:
     {
        // cout << "\n Balances Screen will be here.\n";
         TotalBalancesScreen::ShowTotalBalances();
+        goBackToTransactionsMenue();
     }
     static void showTransferScreen()
     {
@@ -45,7 +47,8 @@ private:
     }
     static void showTransferLogScreen()
     {
-        cout << "\n TransfereLog Screen will be here.\n";
+        //cout << "\n TransfereLog Screen will be here.\n";
+        TransferLogScreen::showTransferLogScreen();
         
     }
 
