@@ -83,6 +83,7 @@ private:
         {
             system("cls");
             showTransferScreen();
+            //when u arrive here transferhistory  will be enable on file 
             goBackToTransactionsMenue();
             break;
         }

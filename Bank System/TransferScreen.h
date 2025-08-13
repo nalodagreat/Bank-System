@@ -53,12 +53,12 @@ class TransferScreen :protected Screen
 		do
 		{
 			
-			cout << "plese inser amount you desire to transfer from " << idClientToTransferFrom << "to " << idClientToTransferTo << endl;
+			cout << "\nplese inser amount you desire to transfer from " << idClientToTransferFrom << "to " << idClientToTransferTo << endl;
 			amountToTransfer = InputValidate::readDblNumber();
 		    isAccoutBalanceIsNotEnough = isAmountToTransferExeedTheAccountBalance(idClientToTransferFrom, amountToTransfer);
 			if (isAccoutBalanceIsNotEnough)
 			{
-				cout << "Amount balnce of the client " << idClientToTransferFrom << " is not enough to transfer" << amountToTransfer << endl;
+				cout << "Amount balnce of the client " << idClientToTransferFrom << " is not enough to transfer " << amountToTransfer << endl;
 			}
 		} while (isAccoutBalanceIsNotEnough);
 		if (ConfirmTransfer("are you sure you want to continue this operation[y/n]:"))
@@ -67,6 +67,8 @@ class TransferScreen :protected Screen
 			{
 				cout << "transfer  proceded successfully\n";
 				printDetails(clientToTransferFrom, clientToTransferTo);
+				//when arrive here transferhistory will start 
+				clientToTransferFrom.transferFileDetails(clientToTransferTo, amountToTransfer);
 			}
 		}
 		else
