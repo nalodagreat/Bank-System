@@ -325,5 +325,29 @@ public:
 		 }
 		 return false;
 	 }
+	 private:
+		 void writeLogHistoryOnfile(string dataLine)
+		 {
+			 fstream myFile;
+			 myFile.open("TransferHistory.txt", ios::out | ios::app);
+			 if (myFile.is_open())
+			 {
+				 myFile << dataLine << endl;
+				 myFile.close();
+			 }
+		 }
+	 public:
+	   void transferFileDetails(BankClient clientTo,double amount)
+	 {
+		 string dateAndTime = Date::convertDateOfLoginstructToString(Date::getSystemDate()) + " - " + Date::getSystemTime();
+		 string idClientFrom = this->getId();
+		 string idClienTo = clientTo.getId();
+		 double amountToTransfer = amount;
+		 double newBalanceClientFrom = this->getAccountBalance();
+		 double newBalanceAmountTo = clientTo.getAccountBalance();
+		 string userNmae = CurrentUser.getUserName();
+		 writeLogHistoryOnfile(dateAndTime + "#//#" + idClientFrom + "#//#" + idClienTo + "#//#" + to_string(amountToTransfer) + "#//#" + to_string(newBalanceClientFrom) + "#//#" + to_string(newBalanceAmountTo) + "#//#" + userNmae);
+	 }
+
 };
 
