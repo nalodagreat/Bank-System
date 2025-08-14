@@ -137,5 +137,11 @@ public:
 			addDataLineToFile(convertObjTostring(c));
 		}
 	}
+	double calculateExchangeCurrency(Currency currencyFrom, Currency currencyTo, double amount)
+	{
+		double amountInBase = amount * currencyFrom.curencyRate;
+		double amountInTarget = amountInBase / currencyTo.curencyRate;
+		return amountInTarget;
+	}
 };
 
