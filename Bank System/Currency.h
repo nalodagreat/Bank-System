@@ -1,0 +1,88 @@
+#pragma once
+#include <string>
+#include <fstream>
+#include <vector>
+#include <iostream>
+#include "clsString.h"
+using namespace std;
+class Currency
+{
+	enum enMode
+	{
+		emptyCurrency=1,updatedCurrency=2
+	}; 
+	enMode mode;
+	string country;
+	string currencyCode;
+	string currencyName;
+	float curencyRate;
+	static Currency getEmptyCurrencyObj()
+	{
+		return Currency(updatedCurrency, "", "", "", 0);
+	}
+	static Currency convertRecordToObj(string line)
+	{
+		vector <string> curencyInfo=clsString::Split(line, "#//#");
+		return Currency(updatedCurrency, curencyInfo[0], curencyInfo[1], curencyInfo[2], stof(curencyInfo[3]));
+	}
+	static vector<Currency> loadDataFromFile()
+	{
+		vector <Currency> vCurrencies;
+		fstream MyFile;
+		MyFile.open("Currencies.txt", ios::in);//read Mode
+
+		if (MyFile.is_open())
+		{
+			string line;
+			while (getline(MyFile, line))
+			{
+				Currency currenccy = convertRecordToObj(line);
+				vCurrencies.push_back(currenccy);
+			}
+			MyFile.close();
+			return  vCurrencies;
+		}
+	}
+public:
+	//constractor
+	Currency(enMode mode,string country,string currencyCode,string currencyName,float curencyRate)
+	{
+		this->mode = mode;
+		this->country = country;
+		this->currencyCode=currencyCode;
+		this->currencyName = currencyName;
+		this->curencyRate = curencyRate;
+	}
+	//read only proprities
+	string getCountry()
+	{
+		return country;
+	}
+	string getCurrencyCode()
+	{
+		return currencyCode;
+	}
+	string getCurrencyName()
+	{
+		return currencyName;
+	}
+	float geturrencyRate()
+	{
+		return curencyRate;
+	}
+	//set currency rate
+	void setCurrencyRte(float newCurrencyRate)
+	{
+		this->curencyRate = newCurrencyRate;
+	}
+	static Currency findCurrency(string currencyCode)
+	{
+		//get all curencies from file
+		if (currencyCode == "3")
+		{
+			return Currency(updatedCurrency, "", "", "", 0); //objCurrency
+		}
+		return getEmptyCurrencyObj();
+	}
+};
+
