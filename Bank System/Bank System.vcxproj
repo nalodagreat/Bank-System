@@ -153,6 +153,7 @@
     <ClInclude Include="UpdateClientScreen.h" />
     <ClInclude Include="UpdateUserScreen.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="Util.h" />
     <ClInclude Include="WithdrawScreen.h" />
   </ItemGroup>
   <ItemGroup>

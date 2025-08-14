@@ -7,6 +7,7 @@
 #include "clsString.h"
 #include "LoginScreen.h"
 #include "Date.h"
+#include "Util.h"
 using namespace std;
 
 class User : public Person
@@ -25,7 +26,7 @@ private:
         vector<string> vUserData = clsString::Split(line, separator);
 
         return User(enMode::updateMode, vUserData[0], vUserData[1], vUserData[2],
-            vUserData[3], vUserData[4], vUserData[5], stoi(vUserData[6]));
+            vUserData[3], vUserData[4], Util::decryptText(vUserData[5],2), stoi(vUserData[6]));
     }
 
     static string convertUserObjectToLine(User user, string separator = "#//#")
@@ -36,7 +37,7 @@ private:
         userRecord += user.getEmail() + separator;
         userRecord += user.getPhoneNumber() + separator;
         userRecord += user.getUserName() + separator;
-        userRecord += user.getPassword() + separator;
+        userRecord += Util::encryptText(user.getPassword(),2) + separator;
         userRecord += to_string(user.getPermissions());
 
         return userRecord;
@@ -133,7 +134,7 @@ private:
         {
               string line="";
               line+=userLog.userName+seperator;
-              line+= userLog.password+seperator;
+              line+= Util::encryptText(userLog.password,2)+seperator;
               line+= to_string(userLog.dateOfLogIn.day) + "/" + to_string(userLog.dateOfLogIn.month) + "/" + to_string(userLog.dateOfLogIn.year) + "/"+seperator;
               line+= userLog.timeOfLogIn+seperator;
 			  line += to_string(userLog.permissions);
@@ -341,7 +342,7 @@ public:
                 vector<string> vData = clsString::Split(line, "#//#");
                 stUserLog userLog;
                 userLog.userName = vData[0];
-                userLog.password = vData[1];
+                userLog.password = Util::decryptText(vData[1],2);
 				userLog.dateOfLogIn =Date::convertStringToDateOfLoginstruct(vData[2]);
 				userLog.timeOfLogIn = vData[3];
                 userLog.permissions = stoi(vData[4]);

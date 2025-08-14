@@ -7,6 +7,9 @@
 #include <vector>
 #include <iomanip>
 #include "InputValidate.h"
+#include "Util.h"
+#include "Date.h"
+#include "Global.h"
 using namespace std;
 class BankClient : public Person
 {
@@ -75,7 +78,7 @@ private:
 	{
 		vector <string> vRecordInfo;
 		vRecordInfo = clsString::Split(line, delim);
-		return BankClient(upadteMode, vRecordInfo[0], vRecordInfo[1], vRecordInfo[2], vRecordInfo[3], vRecordInfo[4], vRecordInfo[5],stof(vRecordInfo[6]));
+		return BankClient(upadteMode, vRecordInfo[0], vRecordInfo[1], vRecordInfo[2], vRecordInfo[3], vRecordInfo[4], Util::decryptText(vRecordInfo[5],2),stof(vRecordInfo[6]));
 
 	}
 	static BankClient getemptyObj()
@@ -165,7 +168,7 @@ private:
 		dataLine += clientObj.getEmail()+separator;
 		dataLine += clientObj.getPhoneNumber() + separator;
 		dataLine += clientObj.getId() + separator;
-		dataLine += clientObj.getPin()+separator;
+		dataLine += Util::encryptText(clientObj.getPin(),2) + separator;
 		dataLine += to_string(clientObj.getAccountBalance());
 		return dataLine;
 	}

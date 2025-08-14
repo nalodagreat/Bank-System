@@ -38,7 +38,6 @@ private:
     {
        // cout << "\n Balances Screen will be here.\n";
         TotalBalancesScreen::ShowTotalBalances();
-        goBackToTransactionsMenue();
     }
     static void showTransferScreen()
     {
