@@ -78,9 +78,26 @@ public:
 	static Currency findCurrency(string currencyCode)
 	{
 		//get all curencies from file
-		if (currencyCode == "3")
+		vector<Currency> vCurrencies=loadDataFromFile();
+		for (Currency c : vCurrencies)
 		{
-			return Currency(updatedCurrency, "", "", "", 0); //objCurrency
+			if (currencyCode == c.currencyCode)
+			{
+				return Currency(updatedCurrency, c.country, c.currencyCode, c.currencyName, c.curencyRate); //objCurrency
+			}
+		}
+		return getEmptyCurrencyObj();
+	}
+	static Currency findCurrency(string country)
+	{
+		//get all curencies from file
+		vector<Currency> vCurrencies = loadDataFromFile();
+		for (Currency c : vCurrencies)
+		{
+			if (country == c.country)
+			{
+				return Currency(updatedCurrency, c.country, c.currencyCode, c.currencyName, c.curencyRate); //objCurrency
+			}
 		}
 		return getEmptyCurrencyObj();
 	}
