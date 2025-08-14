@@ -373,7 +373,7 @@ public:
 			   {
 				   vector<string> vData = clsString::Split(line, "#//#");
 				   stTransferInfo transfer;
-				   transfer.dateAndTime= vData[0];
+				   transfer.dateAndTime = vData[0];
 				   transfer.idClientFrom = vData[1];
 				   transfer.IdClientTo = vData[2];
 				   transfer.amountTransfered = stod(vData[3]);
@@ -386,6 +386,8 @@ public:
 		   }
 		   return vTransfers;
 	   }
+
+
 
 };
 
