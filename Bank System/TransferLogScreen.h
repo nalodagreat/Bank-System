@@ -44,12 +44,12 @@ public:
         cout << setw(8) << left << "" << "\n\t_______________________________________________________";
         cout << "_________________________________________\n" << endl;
 
-        cout << setw(8) << left << "" << "| " << left << setw(35) << "Date/Time"
-            << "| " << left << setw(20) << "idClientTransferedFrom"
-            << "| " << left << setw(20) << "idClientTransferedFrom"
-            << "| " << left << setw(10) << "amountTransferd"
-            << "| " << left << setw(20) << "BalanceClientTransferdFrom"
-            << "| " << left << setw(20) << "BalanceClientTransferdFrom"
+        cout << setw(8) << left << "" << "| " << left << setw(20) << "Date/Time"
+            << "| " << left << setw(20) << "From Client"
+            << "| " << left << setw(20) << "To Client"
+            << "| " << left << setw(20) << "Amount"
+            << "| " << left << setw(20) << "BalanceFromClient"
+            << "| " << left << setw(20) << "BalanceToClient"
             << "| " << left << setw(20) << "Admin" << endl;
         cout << setw(8) << left << "" << "\n\t_______________________________________________________";
         cout << "_________________________________________\n" << endl;
