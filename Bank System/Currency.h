@@ -16,6 +16,7 @@ class Currency
 	string currencyCode;
 	string currencyName;
 	float curencyRate;
+	bool MarkForRateUpdate = false;
 	static Currency getEmptyCurrencyObj()
 	{
 		return Currency(updatedCurrency, "", "", "", 0);
@@ -24,6 +25,14 @@ class Currency
 	{
 		vector <string> curencyInfo=clsString::Split(line, "#//#");
 		return Currency(updatedCurrency, curencyInfo[0], curencyInfo[1], curencyInfo[2], stof(curencyInfo[3]));
+	}
+	static string convertObjTostring(Currency currency, string separator = "#//#")
+	{
+		string line = "";
+		line += currency.country + separator;
+		line += currency.currencyCode + separator;
+		line += currency.currencyName + separator;
+		line += to_string(currency.curencyRate) + separator;
 	}
 	static vector<Currency> loadDataFromFile()
 	{
@@ -42,6 +51,20 @@ class Currency
 			MyFile.close();
 			return  vCurrencies;
 		}
+	}
+	void addDataLineToFile(string  dataLine)
+	{
+		fstream MyFile;
+		MyFile.open("Currencies.txt", ios::out | ios::app);
+
+		if (MyFile.is_open())
+		{
+
+			MyFile << dataLine << endl;
+
+			MyFile.close();
+		}
+
 	}
 public:
 	//constractor
@@ -69,6 +92,7 @@ public:
 	float geturrencyRate()
 	{
 		return curencyRate;
+		updateRateCurrencyInfile();
 	}
 	//set currency rate
 	void setCurrencyRte(float newCurrencyRate)
@@ -100,6 +124,18 @@ public:
 			}
 		}
 		return getEmptyCurrencyObj();
+	}
+	static vector<Currency> getAllCurrenciesToDisplay()
+	{
+		return loadDataFromFile();
+	}
+	void updateRateCurrencyInfile()
+	{
+		vector<Currency> vCurrencies = loadDataFromFile();
+		for (Currency c : vCurrencies)
+		{
+			addDataLineToFile(convertObjTostring(c));
+		}
 	}
 };
 
