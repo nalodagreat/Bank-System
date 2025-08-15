@@ -34,24 +34,6 @@ class Currency
 		line += currency.currencyName + separator;
 		line += to_string(currency.curencyRate) + separator;
 	}
-	static vector<Currency> loadDataFromFile()
-	{
-		vector <Currency> vCurrencies;
-		fstream MyFile;
-		MyFile.open("Currencies.txt", ios::in);//read Mode
-
-		if (MyFile.is_open())
-		{
-			string line;
-			while (getline(MyFile, line))
-			{
-				Currency currenccy = convertRecordToObj(line);
-				vCurrencies.push_back(currenccy);
-			}
-			MyFile.close();
-			return  vCurrencies;
-		}
-	}
 	void addCurrenciesToFile(vector<Currency> vCurrencies)
 	{
 		fstream MyFile;
@@ -82,6 +64,24 @@ class Currency
 	}
 public:
 	//constractor
+	static vector<Currency> loadDataFromFile()
+	{
+		vector <Currency> vCurrencies;
+		fstream MyFile;
+		MyFile.open("Currencies.txt", ios::in);//read Mode
+
+		if (MyFile.is_open())
+		{
+			string line;
+			while (getline(MyFile, line))
+			{
+				Currency currenccy = convertRecordToObj(line);
+				vCurrencies.push_back(currenccy);
+			}
+			MyFile.close();
+			return  vCurrencies;
+		}
+	}
 	Currency(enMode mode,string country,string currencyCode,string currencyName,float curencyRate)
 	{
 		this->mode = mode;

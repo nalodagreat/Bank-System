@@ -4,6 +4,7 @@
 #include "Currency.h"
 #include <iomanip>
 #include <vector>
+#include "CurrencyListScreen.h"
 using namespace std;
 class CurrencyExchangeScreen : protected Screen
 {
@@ -15,7 +16,8 @@ class CurrencyExchangeScreen : protected Screen
     }
     static void _showAllCurrencies()
     {
-        cout << "currencies list will be here";
+        //cout << "currencies list will be here";
+        CurrencyListScreen::showCurrencyList();
         _goBackTocurrencyExchangeScreen();
 
     }
@@ -54,15 +56,19 @@ class CurrencyExchangeScreen : protected Screen
         switch (option)
         {
         case eShowAllCurrencies:
+            system("cls");
             _showAllCurrencies();
             break;
         case eFindCurrency:
+            system("cls");
             _findCurrencyByCode();
             break;
         case eUpdateCurrencyRate:
+            system("cls");
             _updateCurrencyRate();
             break;
         case eExchangeCurrency:
+            system("cls");
             _exchangeCurrency();
             break;
         case eGoBackToMainMenu:
@@ -76,7 +82,7 @@ public:
         system("cls");
         drawScreenHeader("\t\tCurrency Exchange");
         // display choices
-		cout << setw(37) << left << "" << "1. Show All Currencies\n";
+		cout <<endl <<setw(37) << left << "" << "1. Show All Currencies\n";
 		cout << setw(37) << left << "" << "2. Find Currency\n";
 		cout << setw(37) << left << "" << "3. Update Currency Rate\n";
 		cout << setw(37) << left << "" << "4. Exchange Currency\n";
