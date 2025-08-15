@@ -52,6 +52,20 @@ class Currency
 			return  vCurrencies;
 		}
 	}
+	void addCurrenciesToFile(vector<Currency> vCurrencies)
+	{
+		fstream MyFile;
+		MyFile.open("Currencies.txt", ios::out | ios::app);
+		if (MyFile.is_open())
+		{
+			for (Currency c : vCurrencies)
+			{
+				string line = convertObjTostring(c);
+				MyFile << line << endl;
+			}
+			MyFile.close();
+		}
+	}
 	void addDataLineToFile(string  dataLine)
 	{
 		fstream MyFile;
@@ -92,12 +106,12 @@ public:
 	float geturrencyRate()
 	{
 		return curencyRate;
-		updateRateCurrencyInfile();
 	}
 	//set currency rate
 	void setCurrencyRte(float newCurrencyRate)
 	{
 		this->curencyRate = newCurrencyRate;
+		updateRateCurrencyInfile();
 	}
 	static Currency findCurrency(string currencyCode)
 	{
@@ -132,10 +146,15 @@ public:
 	void updateRateCurrencyInfile()
 	{
 		vector<Currency> vCurrencies = loadDataFromFile();
-		for (Currency c : vCurrencies)
+		for (Currency &c : vCurrencies)
 		{
-			addDataLineToFile(convertObjTostring(c));
+			if (c.currencyCode == this->currencyCode)
+			{
+				c = *this;
+				break;
+			}
 		}
+		addCurrenciesToFile(vCurrencies);
 	}
 	double calculateExchangeCurrency(Currency currencyFrom, Currency currencyTo, double amount)
 	{
