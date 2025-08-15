@@ -12,6 +12,7 @@
 #include "ManageUsersScreen.h"
 #include "Global.h"
 #include "LoginRegisterSceen.h"
+#include "CurrencyExchangeScreen.h"
 using namespace std;
 
 class MainScreen :protected Screen
@@ -94,7 +95,7 @@ private:
     }*/
     static void _ShowCurrencyExchange()
     {
-        cout << "\nCurrency Exchange Screen Will be here...\n";
+        CurrencyExchangeScreen::showCurrencyExchangeScreen();
         _GoBackToMainMenue();
     }
     static void _Logout()
