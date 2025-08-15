@@ -7,10 +7,11 @@
 using namespace std;
 class Currency
 {
-	enum enMode
+public:enum enMode
 	{
-		emptyCurrency=1,updatedCurrency=2
-	}; 
+		emptyCurrency = 1, updatedCurrency = 2
+	};
+private:
 	enMode mode;
 	string country;
 	string currencyCode;
@@ -165,9 +166,14 @@ public:
 		double amountInTarget = amountInBase / currencyTo.curencyRate;
 		return amountInTarget;
 	}
-	static bool isCurrencyExist(string currencyCode)
+	static bool isCurrencyExistUsingCode(string currencyCode)
 	{
 		Currency c=findCurrencyByCode(currencyCode);
+		return (c.mode != emptyCurrency);
+	}
+	static bool isCurrencyExistUsingCountry(string currencyCountry)
+	{
+		Currency c=findCurrencyByCountry(currencyCountry);
 		return (c.mode != emptyCurrency);
 	}
 };
