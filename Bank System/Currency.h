@@ -168,7 +168,7 @@ public:
 	static bool isCurrencyExist(string currencyCode)
 	{
 		Currency c=findCurrencyByCode(currencyCode);
-		return (c.mode == emptyCurrency);
+		return (c.mode != emptyCurrency);
 	}
 };
 

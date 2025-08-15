@@ -21,13 +21,13 @@ private:
     {
         eListClients = 1, eAddNewClient = 2, eDeleteClient = 3,
         eUpdateClient = 4, eFindClient = 5, eShowTransactionsMenue = 6,
-        eManageUsers = 7,eLoginRegister ,eExit = 9
+        eManageUsers = 7,eLoginRegister ,eCurrencyExchange,eExit = 10
     };
 
     static short _ReadMainMenueOption()
     {
-        cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 9]? ";
-        short Choice = InputValidate::readShortNumberBetween(1, 9, "Enter Number between 1 to 9? ");
+        cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 10]? ";
+        short Choice = InputValidate::readShortNumberBetween(1, 10, "Enter Number between 1 to 10? ");
         return Choice;
     }
 
@@ -92,6 +92,10 @@ private:
         cout << "\nEnd Screen Will be here...\n";
 
     }*/
+    static void _ShowCurrencyExchange()
+    {
+        cout << "\nCurrency Exchange Screen Will be here...\n";
+    }
     static void _Logout()
     {
 		CurrentUser = User::find("", "");
@@ -153,6 +157,11 @@ private:
 			system("cls");
 			_ShowLoginRegister();
           
+            
+        case enMainMenueOptions::eCurrencyExchange:
+            system("cls");
+            _ShowCurrencyExchange();
+            break;
 
         case enMainMenueOptions::eExit:
             system("cls");

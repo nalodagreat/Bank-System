@@ -159,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />
+    <Text Include="Currencies.txt" />
     <Text Include="TransferHistory.txt" />
     <Text Include="UserLogHistory.txt" />
     <Text Include="Users.txt" />

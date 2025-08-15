@@ -107,11 +107,15 @@
     <ClInclude Include="Util.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="Currency.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />
     <Text Include="Users.txt" />
     <Text Include="UserLogHistory.txt" />
     <Text Include="TransferHistory.txt" />
+    <Text Include="Currencies.txt" />
   </ItemGroup>
 </Project>
