@@ -138,6 +138,7 @@
     <ClInclude Include="DeletClientScreen.h" />
     <ClInclude Include="DeleteUsersScreen.h" />
     <ClInclude Include="DepositScreen.h" />
+    <ClInclude Include="FindCurrencyScreen.h" />
     <ClInclude Include="FindClientScreen.h" />
     <ClInclude Include="FindUserScreen.h" />
     <ClInclude Include="Global.h" />

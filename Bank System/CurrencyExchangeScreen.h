@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <vector>
 #include "CurrencyListScreen.h"
+#include "FindCurrencyScreen.h"
 using namespace std;
 class CurrencyExchangeScreen : protected Screen
 {
@@ -23,7 +24,8 @@ class CurrencyExchangeScreen : protected Screen
     }
     static void _findCurrencyByCode()
     {
-        cout << "findCurrencyByCode will be here";
+        //cout << "findCurrencyByCode will be here";
+        FindCurrencyScreen::showFindCurrencyScreen();
         _goBackTocurrencyExchangeScreen();
 
     }
