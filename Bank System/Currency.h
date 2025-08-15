@@ -113,7 +113,7 @@ public:
 		this->curencyRate = newCurrencyRate;
 		updateRateCurrencyInfile();
 	}
-	static Currency findCurrency(string currencyCode)
+	static Currency findCurrencyByCode(string currencyCode)
 	{
 		//get all curencies from file
 		vector<Currency> vCurrencies=loadDataFromFile();
@@ -126,7 +126,7 @@ public:
 		}
 		return getEmptyCurrencyObj();
 	}
-	static Currency findCurrency(string country)
+	static Currency findCurrencyByCountry(string country)
 	{
 		//get all curencies from file
 		vector<Currency> vCurrencies = loadDataFromFile();
