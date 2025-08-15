@@ -136,6 +136,7 @@ public:
 		{
 			if (country == clsString::UpperAllString(c.country))
 			{
+				//return c;
 				return Currency(updatedCurrency, c.country, c.currencyCode, c.currencyName, c.curencyRate); //objCurrency
 			}
 		}
@@ -163,6 +164,11 @@ public:
 		double amountInBase = amount * currencyFrom.curencyRate;
 		double amountInTarget = amountInBase / currencyTo.curencyRate;
 		return amountInTarget;
+	}
+	static bool isCurrencyExist(string currencyCode)
+	{
+		Currency c=findCurrencyByCode(currencyCode);
+		return (c.mode == emptyCurrency);
 	}
 };
 
