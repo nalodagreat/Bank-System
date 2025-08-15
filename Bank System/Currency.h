@@ -115,6 +115,7 @@ public:
 	}
 	static Currency findCurrencyByCode(string currencyCode)
 	{
+		currencyCode = clsString::UpperAllString(currencyCode);
 		//get all curencies from file
 		vector<Currency> vCurrencies=loadDataFromFile();
 		for (Currency c : vCurrencies)
@@ -128,11 +129,12 @@ public:
 	}
 	static Currency findCurrencyByCountry(string country)
 	{
+		country = clsString::UpperAllString(country);
 		//get all curencies from file
 		vector<Currency> vCurrencies = loadDataFromFile();
 		for (Currency c : vCurrencies)
 		{
-			if (country == c.country)
+			if (country == clsString::UpperAllString(c.country))
 			{
 				return Currency(updatedCurrency, c.country, c.currencyCode, c.currencyName, c.curencyRate); //objCurrency
 			}
