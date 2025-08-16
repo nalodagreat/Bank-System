@@ -8,14 +8,14 @@
 using namespace std;
 class UpdateCurrencyRateScreen :protected Screen
 {
-    string readCurrencyToUpdate()
+    static string readCurrencyToUpdate()
     {
 		string currencyCode="";
         cout<<"Enter Currency Code to update: ";
 		currencyCode = InputValidate::readString();
 		return currencyCode;
     }
-    void printCurrencyCard(Currency currency)
+    static void printCurrencyCard(Currency currency)
     {
         cout << "\n\t\t\t\t\t______________________________________\n";
         cout << "\t\t\t\t\t| Country: " << currency.getCountry() << endl;
@@ -25,7 +25,7 @@ class UpdateCurrencyRateScreen :protected Screen
         cout << "\t\t\t\t\t______________________________________\n\n";
 	}
 public:
-    void showUpdateCurrencyRateScreen()
+   static void showUpdateCurrencyRateScreen()
     {
 		drawScreenHeader("\tUpdate Currency Rate");
 

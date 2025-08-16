@@ -34,6 +34,7 @@ private:
 		line += currency.currencyCode + separator;
 		line += currency.currencyName + separator;
 		line += to_string(currency.curencyRate) + separator;
+		return line;
 	}
 	void addCurrenciesToFile(vector<Currency> vCurrencies)
 	{

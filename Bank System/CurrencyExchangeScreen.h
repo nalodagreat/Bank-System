@@ -6,6 +6,7 @@
 #include <vector>
 #include "CurrencyListScreen.h"
 #include "FindCurrencyScreen.h"
+#include "UpdateCurrencyRateScreen.h"
 using namespace std;
 class CurrencyExchangeScreen : protected Screen
 {
@@ -31,7 +32,8 @@ class CurrencyExchangeScreen : protected Screen
     }
     static void _updateCurrencyRate()
     {
-        cout << "updateCurrencyRate will be here";
+        //cout << "updateCurrencyRate will be here";
+        UpdateCurrencyRateScreen::showUpdateCurrencyRateScreen();
         _goBackTocurrencyExchangeScreen();
     }
     static void _exchangeCurrency()
