@@ -20,7 +20,7 @@ private:
 	bool MarkForRateUpdate = false;
 	static Currency getEmptyCurrencyObj()
 	{
-		return Currency(updatedCurrency, "", "", "", 0);
+		return Currency(enMode::emptyCurrency, "", "", "", 0);
 	}
 	static Currency convertRecordToObj(string line)
 	{
@@ -107,6 +107,10 @@ public:
 	float geturrencyRate()
 	{
 		return curencyRate;
+	}
+	enMode getMode()
+	{
+		return mode;
 	}
 	//set currency rate
 	void setCurrencyRte(float newCurrencyRate)
