@@ -29,32 +29,36 @@ class FindCurrencyScreen :protected Screen
 public:
 	static void showFindCurrencyScreen()
 	{
-		bool currencyFound = true; Currency currencyToFind(Currency::enMode::emptyCurrency, "", "", "", 0);
+	 Currency currencyToFind(Currency::enMode::emptyCurrency, "", "", "", 0);
 		drawScreenHeader("\tFind Currency Screen");
+		short currencyFindMode = readFindCurrencyMode();
 		do
 		{
 
-			if (readFindCurrencyMode() == 1)
+			if (currencyFindMode == 1)
 			{
 				string country = readInput("enter the CurrencyCountry:");
 				currencyToFind = Currency::findCurrencyByCountry(country);
-				currencyFound = Currency::isCurrencyExistUsingCountry(country);
-				if (!currencyFound)
-					cout << "Currency not found :(\n";
+				/*currencyFound = Currency::isCurrencyExistUsingCountry(country);*/
+				if (currencyToFind.getMode() == Currency::enMode::emptyCurrency)
+				{
+					cout << "\nCurrency not found :(\n";
+				}
 			}
-			else if (readFindCurrencyMode() == 2)
+			else if (currencyFindMode == 2)
 			{
 				string code = readInput("enter the CurrencyCode:");
-				currencyToFind = Currency::findCurrencyByCode(readInput(code));
-				currencyFound = Currency::isCurrencyExistUsingCode(readInput(code));
-				if (!currencyFound)
-					cout << "Currency not found :(\n";
+				currencyToFind = Currency::findCurrencyByCode(code);
+				/*currencyFound = Currency::isCurrencyExistUsingCode(code);*/
+				if (currencyToFind.getMode() == Currency::enMode::emptyCurrency)
+				{
+					cout << "\nCurrency not found :(\n";
+				}
 			}
-		} while (!currencyFound);
-		if (currencyFound)
-		{
-			cout << "CurrencyFound :)\n\n";
-			printCurrencyCard(currencyToFind);
-		}
+		} while (currencyToFind.getMode() == Currency::enMode::emptyCurrency);
+
+		cout << "CurrencyFound :)\n\n";
+		printCurrencyCard(currencyToFind);
+
 	}
 };
