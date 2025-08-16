@@ -119,6 +119,9 @@
     <ClInclude Include="FindCurrencyScreen.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="UpdateCurrencyRateScreen.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />
