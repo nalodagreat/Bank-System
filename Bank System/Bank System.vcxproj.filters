@@ -122,6 +122,9 @@
     <ClInclude Include="UpdateCurrencyRateScreen.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="ExchangeCurrencyCalculatorScreen.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />

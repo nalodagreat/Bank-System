@@ -7,7 +7,7 @@ using namespace std;
 class ExchangeCurrencyCalculatorScreen : protected Screen
 {
 private:
-	Currency readCurrency(string message)
+	static Currency readCurrency(string message)
 	{
 			
 		cout << message;
@@ -37,7 +37,7 @@ private:
 		
 	}
 public:
-	void showExchangeCurrencyCalculatorScreen()
+	static void showExchangeCurrencyCalculatorScreen()
 	{
 		drawScreenHeader("Exchange Currency Calculator", "Calculate the exchange rate between two currencies");
 		Currency currency1 = readCurrency("please enter the currency u want to exchange: ");
