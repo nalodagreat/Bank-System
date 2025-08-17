@@ -26,9 +26,9 @@ private:
 		cout << "Enter the amount you want to exchange: ";		
 		return InputValidate::readDblNumber();
 	}
-	static void printCurrencyExChangeInfo( Currency currency1,Currency currency2,double amountToExchange)
+	static void printCurrencyExChangeInfo( Currency currency1,Currency currency2,double amountToExchange, double exchangeValue)
 	{
-		double exchangeValue = currency1.calculateExchangeCurrency(currency1, currency2, amountToExchange);
+		
 		cout<< "Currency Exchange Details:" << endl;
 		cout << "-----------------" << endl;
 		cout << "From Currency: " << currency1.getCurrencyCode() << " (" << currency1.getCurrencyName() << ")" << endl;
@@ -40,10 +40,11 @@ public:
 	static void showExchangeCurrencyCalculatorScreen()
 	{
 		drawScreenHeader("Exchange Currency Calculator", "Calculate the exchange rate between two currencies");
-		Currency currency1 = readCurrency("please enter the currency u want to exchange: ");
-		Currency currency2 = readCurrency("please enter the currency u want to exchange to: ");
+		Currency currency1 = readCurrency("please enter the CurrencyCode u want to exchange From: ");
+		Currency currency2 = readCurrency("please enter the CurrencyCode u want to exchange To: ");
 		double amountToExchange = readAmountToExchange();
-		printCurrencyExChangeInfo(currency1, currency2, amountToExchange);
+		double exchangeValue = currency1.calculateExchangeCurrency(currency2, amountToExchange);
+		printCurrencyExChangeInfo(currency1, currency2, amountToExchange, exchangeValue);
 	}
 };
 
