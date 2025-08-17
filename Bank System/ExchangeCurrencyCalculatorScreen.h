@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <iomanip>
 #include "Screen.h"
 #include "Currency.h"
 #include "InputValidate.h"
@@ -27,9 +26,9 @@ private:
 		cout << "Enter the amount you want to exchange: ";		
 		return InputValidate::readDblNumber();
 	}
-	static void printCurrencyExChangeInfo( Currency currency1,Currency currency2 )
+	static void printCurrencyExChangeInfo( Currency currency1,Currency currency2,double amountToExchange)
 	{
-		double exchangeValue = currency1.calculateExchangeCurrency(currency1, currency2, readAmountToExchange());
+		double exchangeValue = currency1.calculateExchangeCurrency(currency1, currency2, amountToExchange);
 		cout<< "Currency Exchange Details:" << endl;
 		cout << "-----------------" << endl;
 		cout << "From Currency: " << currency1.getCurrencyCode() << " (" << currency1.getCurrencyName() << ")" << endl;
@@ -41,7 +40,10 @@ public:
 	void showExchangeCurrencyCalculatorScreen()
 	{
 		drawScreenHeader("Exchange Currency Calculator", "Calculate the exchange rate between two currencies");
-		
+		Currency currency1 = readCurrency("please enter the currency u want to exchange: ");
+		Currency currency2 = readCurrency("please enter the currency u want to exchange to: ");
+		double amountToExchange = readAmountToExchange();
+		printCurrencyExChangeInfo(currency1, currency2, amountToExchange);
 	}
 };
 
