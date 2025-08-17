@@ -7,6 +7,7 @@
 #include "CurrencyListScreen.h"
 #include "FindCurrencyScreen.h"
 #include "UpdateCurrencyRateScreen.h"
+#include "ExchangeCurrencyCalculatorScreen.h"
 using namespace std;
 class CurrencyExchangeScreen : protected Screen
 {
@@ -38,7 +39,8 @@ class CurrencyExchangeScreen : protected Screen
     }
     static void _exchangeCurrency()
     {
-        cout << "updateCurrencyRate will be here";
+        //cout << "updateCurrencyRate will be here";
+        ExchangeCurrencyCalculatorScreen::showExchangeCurrencyCalculatorScreen();
         _goBackTocurrencyExchangeScreen();
     }
     enum enExchangeMenuOptions
