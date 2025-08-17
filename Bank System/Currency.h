@@ -165,10 +165,10 @@ public:
 		}
 		addCurrenciesToFile(vCurrencies);
 	}
-	double calculateExchangeCurrency(Currency currencyFrom, Currency currencyTo, double amount)
+	double calculateExchangeCurrency( Currency currency, double amount)
 	{
-		double amountInBase = amount * currencyFrom.curencyRate;
-		double amountInTarget = amountInBase / currencyTo.curencyRate;
+		double amountInBase = amount * currency.curencyRate;
+		double amountInTarget = amountInBase / this->curencyRate;
 		return amountInTarget;
 	}
 	static bool isCurrencyExistUsingCode(string currencyCode)
